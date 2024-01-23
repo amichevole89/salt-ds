@@ -28,11 +28,11 @@ export const Error = (): ReactElement => {
         Open error dialog
       </Button>
       <Dialog
-        style={{ width: 500 }}
         open={open}
         onOpenChange={onOpenChange}
         role="alertdialog"
         status="error"
+        size={"small"}
       >
         <DialogTitle>Can't move file</DialogTitle>
         <DialogContent>

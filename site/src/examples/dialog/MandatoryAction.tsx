@@ -7,7 +7,7 @@ import {
   DialogContent,
 } from "@salt-ds/lab";
 
-export const Default = (): ReactElement => {
+export const MandatoryAction = (): ReactElement => {
   const [open, setOpen] = useState(false);
 
   const handleRequestOpen = () => {
@@ -25,10 +25,15 @@ export const Default = (): ReactElement => {
   return (
     <>
       <Button data-testid="dialog-button" onClick={handleRequestOpen}>
-        Open default dialog
+        Dialog Must be Actioned to Close
       </Button>
-      <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogTitle>Terms and conditions</DialogTitle>
+      <Dialog
+        open={open}
+        onOpenChange={onOpenChange}
+        closeOnBlur={false}
+        size={"small"}
+      >
+        <DialogTitle accent={false}>Terms and conditions</DialogTitle>
         <DialogContent>
           <StackLayout>
             <div>

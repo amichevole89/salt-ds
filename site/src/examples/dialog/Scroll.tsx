@@ -5,9 +5,10 @@ import {
   DialogTitle,
   DialogActions,
   DialogContent,
+  DialogCloseButton,
 } from "@salt-ds/lab";
 
-export const Accent = (): ReactElement => {
+export const Scroll = (): ReactElement => {
   const [open, setOpen] = useState(false);
 
   const handleRequestOpen = () => {
@@ -25,10 +26,10 @@ export const Accent = (): ReactElement => {
   return (
     <>
       <Button data-testid="dialog-button" onClick={handleRequestOpen}>
-        Open dialog with accent
+        Open scrollable dialog
       </Button>
-      <Dialog style={{ width: 500 }} open={open} onOpenChange={onOpenChange}>
-        <DialogTitle accent>Terms and conditions</DialogTitle>
+      <Dialog open={open} onOpenChange={onOpenChange} size={"small"}>
+        <DialogTitle>Terms and conditions</DialogTitle>
         <DialogContent>
           <StackLayout>
             <div>
@@ -71,6 +72,7 @@ export const Accent = (): ReactElement => {
             Accept
           </Button>
         </DialogActions>
+        <DialogCloseButton onClick={handleClose} />
       </Dialog>
     </>
   );

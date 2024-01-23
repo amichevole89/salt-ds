@@ -14,14 +14,20 @@ import dialogTitleCss from "./DialogTitle.css";
 const withBaseName = makePrefixer("saltDialogTitle");
 
 interface DialogTitleProps extends ComponentPropsWithoutRef<"h2"> {
+  /**
+   * Status indicator
+   * */
   status?: ValidationStatus;
+  /**
+   * Displays the accent bar in the Dialog Title
+   * */
   accent?: boolean;
 }
 
 export const DialogTitle = ({
   children,
   className,
-  accent,
+  accent = true,
   status: statusProp,
   ...rest
 }: DialogTitleProps) => {
@@ -37,18 +43,18 @@ export const DialogTitle = ({
 
   return (
     <H2
-      id={`${dialogId!}-heading`}
+      id={`${dialogId}-heading`}
       className={clsx(
         withBaseName(),
         {
           [withBaseName("withAccent")]: accent && !status,
-          [withBaseName(status!)]: !!status,
+          [withBaseName(status as ValidationStatus)]: !!status,
         },
         className
       )}
       {...rest}
     >
-      {status && <StatusIndicator status={status} />}
+      {status && <StatusIndicator status={status as ValidationStatus} />}
       {children}
     </H2>
   );
