@@ -1,5 +1,13 @@
 # @salt-ds/lab
 
+## 1.0.0-alpha.31
+
+### Minor Changes
+
+- de68031a: - Added `min` and `hideLabel` to LinearProgress and CircularProgress.
+  - Removed `unit` from LinearProgress.
+- 604a7314: Add support for complex value options to ComboBoxNext and DropdownNext.
+
 ## 1.0.0-alpha.30
 
 ### Patch Changes
