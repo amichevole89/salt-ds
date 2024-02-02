@@ -23,8 +23,6 @@ export default {
 const DialogTemplate: StoryFn<typeof Dialog> = ({
   title,
   id,
-  // @ts-ignore
-  accent,
   size,
   // @ts-ignore
   content,
@@ -57,7 +55,7 @@ const DialogTemplate: StoryFn<typeof Dialog> = ({
         id={id}
         size={size}
       >
-        <DialogTitle accent={accent as boolean}>{title}</DialogTitle>
+        <DialogTitle>{title}</DialogTitle>
         <DialogContent>{content}</DialogContent>
         <DialogActions>
           <Button variant="secondary" onClick={handleClose}>
@@ -77,13 +75,6 @@ const DialogTemplate: StoryFn<typeof Dialog> = ({
 export const Default = DialogTemplate.bind({});
 Default.args = {
   id: "DialogTestId",
-};
-
-export const WithoutAccent = DialogTemplate.bind({});
-Default.args = {
-  id: "DialogTestId",
-  // @ts-ignore
-  accent: false,
 };
 
 export const LongContent = DialogTemplate.bind({});

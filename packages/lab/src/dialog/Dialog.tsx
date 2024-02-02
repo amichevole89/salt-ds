@@ -120,7 +120,6 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(function Dialog(
     <Scrim>
       <DialogContext.Provider value={contextValue}>
         <FloatingComponent
-          id={`${dialogId}-FLoatigComponent`}
           open={open}
           aria-modal="true"
           ref={floatingRef}
